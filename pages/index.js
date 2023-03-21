@@ -34,8 +34,10 @@ export default function Home({ allPostsData }) {
       </title>
     </Head>
     <section className={utilStyle.headingMd}>
-      <p>エンジニアです</p>
-    </section>
+    <p>こんにちは！Georgeです！</p>
+            <p>現在は主にPHPを使用したシステムエンジニアとして働いています！</p>
+            <p>より多くの知見と経験を得るために個人開発を進めています！！</p>
+            <p>何卒よろしくお願いします！！！</p>    </section>
     <section>
       <h2>📝エンジニアのブログ</h2>
       <div className={styles.grid}>
