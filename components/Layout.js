@@ -15,12 +15,33 @@ function Layout({ children, home }) {
             <header className={styles.header}>
                 {home ? (
                     <>
+                        <ul className={styles.snsIcons}>
+                            <li>
+                                <a href="https://twitter.com/George23767665" target="_blank">
+                                    <img src="images/icon_tw.png" width="30" height="30" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100009791496155" target="_blank">
+                                    <img src="images/icon_fb.png" width="30" height="30" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/george_onepiece_naruto/" target="_blank">
+                                    <img src="images/icon_ig.png" width="30" height="30" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.wantedly.com/users/103094284" target="_blank">
+                                    <img src="images/icon_wa.png" width="30" height="30" />
+                                </a>
+                            </li>
+                        </ul>
                         <img src="/images/mv.png" />
                         {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
                     </>
                 ) : (
                     <>
-                        <img src="/images/profile.png" className={`${utilStyles.borderCircle}`} />
                     </>
                 )}
             </header>
