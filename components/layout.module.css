@@ -4,33 +4,33 @@
     margin: 0 auto 6rem;
   }
   
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .headerImage {
-    width: 6rem;
-    height: 6rem;
-  }
-  
-  .headerHomeImage {
-    width: 8rem;
-    height: 8rem;
-  }
-  
-  .backToHome {
-    margin: 3rem 0 0;
-  }
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.headerImage {
+  width: 6rem;
+  height: 6rem;
+}
+
+.headerHomeImage {
+  width: 8rem;
+  height: 8rem;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
 
 .snsIcons {
-    /* margin: 10px 50px 0 0; */
     display: flex;
 }
 
 .snsIcons > li{
     display: inline;
+    padding-right: 5px;
 }
 
 .snsIcons > img {

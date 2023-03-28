@@ -1,30 +1,29 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import fs from 'fs'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Layout, { siteTitle } from '../components/Layout'
 import utilStyle from '../styles/utils.module.css'
-import { getPostsData } from '../lib/post'
-
+import Date from '../lib/date'
 
 // SSGの場合
 export async function getStaticProps() {
-  const allPostsData = getPostsData(); // id, titile, date, thumbnail
+  const token = 'ed5a0d44a7c9deae592c57aff4f53a786fd21c37'
+  const res = await fetch('https://qiita.com/api/v2/authenticated_user/items?per_page=100', {
+      headers: {
+          Authorization: `Bearer ${token}`,
+      }
+  })
+
+  const allPostsData = await res.json()
+
   return {
     props: {
       allPostsData,
     }
   }
 }
-
-//SSRの場合
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {
-//       // コンポーネントに渡すためのprops
-//     }
-//   }
-// }
 
 export default function Home({ allPostsData }) {
   return <Layout home>
@@ -60,20 +59,19 @@ export default function Home({ allPostsData }) {
       </ul>
     </section>
     <section>
-      <h2>📝エンジニアのブログ</h2>
+      <h2>投稿記事（Qiitaに飛びます）</h2>
       <div className={styles.grid}>
-        {allPostsData.map(({id, date, title, thumbnail}) => (
+        {allPostsData.filter(post => post.likes_count >= 1).sort((a, b) => b.likes_count - a.likes_count).map(({id, created_at, title, url, likes_count}) => (
           <article key={id}>
-            <Link href={`/posts/${id}`}>
-              <img src={thumbnail}
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href={`/posts/${id}`} className={utilStyle.boldText}>
+            <Link href={`${url}`} className={utilStyle.boldText} target='_blank'>
                 {title}
               <br />
               <small className={utilStyle.lightText}>
-                {date}
+                <Date dateString={created_at} />
+              </small>
+              <br />
+              <small className={utilStyle.lightText}>
+                {likes_count}いいね
               </small>
             </Link>
           </article>
