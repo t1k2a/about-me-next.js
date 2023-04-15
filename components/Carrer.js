@@ -9,8 +9,8 @@ function Carrer() {
                 <p>現在は主にPHPやJavaScriptを使用したシステムエンジニアとして働いています！</p>
                 <p>より多くの知見と経験を得るために個人開発を進めています！！</p>
                 <p>何卒よろしくお願いします！！！</p> 
-                </section>
-                <section>
+            </section>
+            <section>
                 <h2>これまでの経歴</h2>
                 <ul>
                     <li>
