@@ -1,9 +1,7 @@
 import Head from "next/head";
 import styles from "./layout.module.css"
-import utilStyles from "../styles/utils.module.css"
 import Link from "next/link";
 
-const name = "Shin Code"
 export const siteTitle = "Next.js blog"
 
 function Layout({ children, home }) {
@@ -38,7 +36,6 @@ function Layout({ children, home }) {
                             </li>
                         </ul>
                         <img src="/images/mv.png" />
-                        {/* <h1 className={utilStyles.heading2Xl}>{name}</h1> */}
                     </>
                 ) : (
                     <>
