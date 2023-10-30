@@ -24,6 +24,13 @@ function Posts({ allPostsData }) {
             </article>
           ))}
         </div>
+
+        <section>
+          <h2>X（旧Twitter）</h2>
+          <div className={styles.grid}>
+            <a class="twitter-timeline" href="https://twitter.com/t1k2a?ref_src=twsrc%5Etfw">Tweets by t1k2a</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </section>
       </section>
     )
 }
