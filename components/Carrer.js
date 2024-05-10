@@ -30,61 +30,46 @@ const listCommonStyle = {
   position: "relative",
 };
 
+const ulCommonStyle = {
+  listStyle: "none",
+  padding: "0",
+  with: "50%",
+  display: "flex"
+}
+
 function Carrer() {
-  console.log(carrerList);
+  const carrerListDOM = carrerList.map((carrer, index) => {
+    const listConditionalStyle = index % 3 === 0 {} :{};
+
+  const finalListStyle = {
+    ...listCommonStyle,
+    ...listConditionalStyle,
+  };
+
+  return <li
+      style={finalListStyle}>
+        <h3 style={{ fontSize: "16px", margin: "0", fontWeight: "bold" }}>
+          {carrer.title}
+        </h3>
+        <hr
+          style={{
+            border: "none",
+            height: "1px",
+            backgroundColor: "black",
+            margin: "5px 0",
+          }}
+        />
+        <p style={{ margin: "0", fontSize: "14px" }}>{carrer.content}</p>
+      </li>
+  });
+
+
   return (
     <div className={styles.container}>
       <section>
         <h2>これまでの経歴</h2>
-        <ul style={{ listStyle: "none", padding: "0", width: "50%" }}>
-          {carrerList.map((carrer, index) => (
-            
-            const listConditionalStyle =
-              index === 2
-                ? [
-                    display => "flex",
-                    flexDirection => "row",
-                ]
-                : [];
-
-            const finalListStyle = [
-              ...listCommonStyle,
-              ...listConditionalStyle,
-            ];
-
-            <li
-              style={{
-                marginBottom: "20px",
-                paddingLeft: "30px",
-                position: "relative",
-              }}
-            >
-              <div
-                style={{
-                  content: "",
-                  width: "10px",
-                  height: "10px",
-                  backgroundColor: "gray",
-                  borderRadius: "50%",
-                  position: "absolute",
-                  left: "0",
-                  top: "10px",
-                }}
-              ></div>
-              <h3 style={{ fontSize: "16px", margin: "0", fontWeight: "bold" }}>
-                {carrer.title}
-              </h3>
-              <hr
-                style={{
-                  border: "none",
-                  height: "1px",
-                  backgroundColor: "black",
-                  margin: "5px 0",
-                }}
-              />
-              <p style={{ margin: "0", fontSize: "14px" }}>{carrer.content}</p>
-            </li>
-          ))}
+        <ul style={ulCommonStyle}>
+          {carrerListDOM}
         </ul>
       </section>
     </div>
