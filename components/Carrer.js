@@ -1,5 +1,5 @@
 import styles from "./layout.module.css";
-import utilStyle from "../styles/utils.module.css";
+import carrerStyle from "../styles/carrer.module.css"
 
 const carrerList = [
   {
@@ -16,7 +16,7 @@ const carrerList = [
   },
   {
     title: "広告系ベンチャー企業2",
-    content: "Webページ制作部隊のリードエンジニアを担当",
+    content: "美容系Webページ制作部隊のリードエンジニアを担当",
   },
   {
     title: "フリーランス",
@@ -24,30 +24,10 @@ const carrerList = [
   },
 ];
 
-const listCommonStyle = {
-  marginBottom: "20px",
-  paddingLeft: "30px",
-  position: "relative",
-};
-
-const ulCommonStyle = {
-  listStyle: "none",
-  padding: "0",
-  with: "50%",
-  display: "flex"
-}
-
 function Carrer() {
-  const carrerListDOM = carrerList.map((carrer, index) => {
-    const listConditionalStyle = index % 3 === 0 {} :{};
-
-  const finalListStyle = {
-    ...listCommonStyle,
-    ...listConditionalStyle,
-  };
-
+  const carrerListDOM = carrerList.map((carrer) => {
   return <li
-      style={finalListStyle}>
+      className={carrerStyle.listCommonStyle}>
         <h3 style={{ fontSize: "16px", margin: "0", fontWeight: "bold" }}>
           {carrer.title}
         </h3>
@@ -55,6 +35,7 @@ function Carrer() {
           style={{
             border: "none",
             height: "1px",
+            width: "90%",
             backgroundColor: "black",
             margin: "5px 0",
           }}
@@ -68,7 +49,7 @@ function Carrer() {
     <div className={styles.container}>
       <section>
         <h2>これまでの経歴</h2>
-        <ul style={ulCommonStyle}>
+        <ul className={carrerStyle.ulCommonStyle}>
           {carrerListDOM}
         </ul>
       </section>
