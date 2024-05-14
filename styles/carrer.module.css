@@ -1,19 +1,21 @@
-li.listCommonStyle {
-    margin-bottom: 20px;
+.divFlexStyle {
+    display: grid;
+    flex-wrap: wrap;
+    grid-gap: 40px;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    max-width: 1200px;
+}
+
+.listCommonStyle {
+    margin-bottom: 50px;
     padding-left: 5px;
-    width: 50%;
-    display: inline-block;
+    width: 100%;
+    display: block;
 }
 
-li.listCommonStyle:nth-child(3n) {
-    margin-right: 0;
-}
 
-li.listCommonStyle:nth-child:not(:nth-child(3n)) {
-    margin-right: 5%;
-}
-
-ul.ulCommonStyle {
+.ulCommonStyle {
     list-style: none;
     padding: 0;
 }
