@@ -31,11 +31,16 @@
   flex-wrap: wrap;
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  max-width: 1200px;
+  max-width: 11150px;
 }
 
+/* .gridAutoTemplateColumn {
+  grid-template-columns: auto;
+
+} */
+
 .grid article {
-  margin-top: 2em;
+  /* margin-top: 2em; */
   border-bottom: 1px solid #a59e9e;
 }
 

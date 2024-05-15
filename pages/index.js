@@ -17,7 +17,7 @@ async function fetchQiitaItems() {
 
   const allPostsData = await res.json();
 
-  return allPostsData.filter((item) => item.likes_count >= 3);
+  return allPostsData.filter((item) => item.likes_count >= 10);
 }
 
 // SSGの場合
