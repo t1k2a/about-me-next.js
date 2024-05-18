@@ -4,11 +4,10 @@ import Date from '../lib/date';
 import Link from 'next/link';
 
 function Posts({ allPostsData }) {
-  const articleGridClassNames = `${styles.grid} ${styles.gridAutoTemplateColumn}`;
   return (
     <section>
       <h2>投稿記事（Qiitaに飛びます）</h2>
-      <div className={articleGridClassNames}>
+      <div className={styles.grid}>
         {allPostsData
           .sort((a, b) => b.likes_count - a.likes_count)
           .map(({ id, created_at, title, url, likes_count }) => (

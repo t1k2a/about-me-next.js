@@ -1,7 +1,3 @@
 .divFlexStyle {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* TODO スライドが表示崩れを起こすので調整する */
-    /* align-items: center; */
-    max-width: 500px;
+  max-width: 500px;
 }

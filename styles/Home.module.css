@@ -34,22 +34,15 @@
   max-width: 11150px;
 }
 
-/* .gridAutoTemplateColumn {
-  grid-template-columns: auto;
-
-} */
-
 .grid article {
-  /* margin-top: 2em; */
   border-bottom: 1px solid #a59e9e;
 }
 
 .grid article:hover {
   cursor: pointer;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .grid article a:hover {
   text-decoration: none;
-
 }
