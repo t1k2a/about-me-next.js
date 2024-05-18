@@ -30,7 +30,7 @@ const carrerList2 = [
   },
   {
     title: "（現）フリーランス",
-    content: "社内システムのリプレイスを担当 Cake→Laravel",
+    content: "社内システムのリプレイス(Cake→Laravel)、プロジェクト施策やシステム改善を担当",
     date: DateFormat(2023, 4)
   },
 ]
@@ -38,7 +38,7 @@ const carrerList2 = [
 const CommonDOM = ({ title, content, date}) => ( 
   <article
   className={carrerStyle.listCommonStyle}>
-    <h3 style={{ fontSize: "16px", margin: "0", fontWeight: "bold" }}>
+    <h3 style={{ margin: "0", fontWeight: "bold" }}>
       {title}
     </h3>
     <small className={utilStyle.lightText}>
@@ -53,7 +53,7 @@ const CommonDOM = ({ title, content, date}) => (
         margin: "5px 0",
       }}
     />
-    <p style={{ margin: "0", fontSize: "14px", width: "90%"}}>{content}</p>
+    <p style={{ margin: "0", fontSize: "15px", width: "90%"}}>{content}</p>
   </article>
 )
 
@@ -67,7 +67,7 @@ function Carrer() {
     });
     
   return (
-    <div className={styles.container}>
+    <div>
         <h2>これまでの経歴</h2>
       <div className={carrerStyle.divFlexStyle}>
         <div className={styles.grid}>

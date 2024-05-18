@@ -39,7 +39,6 @@ function Posts({ allPostsData }) {
       </Link>
       </div>
 
-    
     </section>
   );
 }
