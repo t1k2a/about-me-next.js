@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/Layout";
-import Carrer from "../components/Carrer";
-import Posts from "../components/Posts";
-import Works from "../components/Works";
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/Layout';
+import Carrer from '../components/Carrer';
+import Posts from '../components/Posts';
+import Works from '../components/Works';
 
 async function fetchQiitaItems() {
-  const token = "ed5a0d44a7c9deae592c57aff4f53a786fd21c37";
+  const token = 'ed5a0d44a7c9deae592c57aff4f53a786fd21c37';
   const res = await fetch(
-    "https://qiita.com/api/v2/authenticated_user/items?per_page=100",
+    'https://qiita.com/api/v2/authenticated_user/items?per_page=100',
     {
       headers: {
         Authorization: `Bearer ${token}`,

@@ -1,14 +1,14 @@
-import styles from "../styles/Home.module.css";
-import utilStyle from "../styles/utils.module.css";
-import Date from "../lib/date";
-import Link from "next/link";
+import styles from '../styles/Home.module.css';
+import utilStyle from '../styles/utils.module.css';
+import Date from '../lib/date';
+import Link from 'next/link';
 
 function Posts({ allPostsData }) {
-  const articleGridClassNames = `${styles.grid} ${styles.gridAutoTemplateColumn}`
+  const articleGridClassNames = `${styles.grid} ${styles.gridAutoTemplateColumn}`;
   return (
     <section>
       <h2>投稿記事（Qiitaに飛びます）</h2>
-      <div className={articleGridClassNames} >
+      <div className={articleGridClassNames}>
         {allPostsData
           .sort((a, b) => b.likes_count - a.likes_count)
           .map(({ id, created_at, title, url, likes_count }) => (
@@ -30,15 +30,14 @@ function Posts({ allPostsData }) {
               </Link>
             </article>
           ))}
-      <Link
-      style={{textDecoration: "underline"}}
-        href={`https://qiita.com/t1k2a`}
-        target="_blank"
-      >
-        投稿記事をもっと見る
-      </Link>
+        <Link
+          style={{ textDecoration: 'underline' }}
+          href={`https://qiita.com/t1k2a`}
+          target="_blank"
+        >
+          投稿記事をもっと見る
+        </Link>
       </div>
-
     </section>
   );
 }

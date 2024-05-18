@@ -1,6 +1,6 @@
-import Head from "next/head";
-import styles from "./layout.module.css";
-import Link from "next/link";
+import Head from 'next/head';
+import styles from './layout.module.css';
+import Link from 'next/link';
 
 export const siteTitle = "George's Portfolio Site";
 
