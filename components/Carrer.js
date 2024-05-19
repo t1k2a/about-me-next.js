@@ -1,4 +1,4 @@
-import styles from './layout.module.css';
+import styles from '../styles/Home.module.css';
 import carrerStyle from '../styles/carrer.module.css';
 import utilStyle from '../styles/utils.module.css';
 
@@ -24,9 +24,6 @@ const carrerList = [
     content: 'ECサイト改修や決済サービスの保守運用を担当',
     date: DateFormat(2020, 3, 2021, 6),
   },
-];
-
-const carrerList2 = [
   {
     title: '広告系ベンチャー企業2',
     content:
@@ -42,7 +39,7 @@ const carrerList2 = [
 ];
 
 const CommonDOM = ({ title, content, date }) => (
-  <article className={carrerStyle.listCommonStyle}>
+  <div className={carrerStyle.listCommonStyle}>
     <h3 style={{ margin: '0', fontWeight: 'bold' }}>{title}</h3>
     <small className={utilStyle.lightText}>{date}</small>
     <hr
@@ -55,7 +52,7 @@ const CommonDOM = ({ title, content, date }) => (
       }}
     />
     <p style={{ margin: '0', fontSize: '15px', width: '90%' }}>{content}</p>
-  </article>
+  </div>
 );
 
 function Carrer() {
@@ -70,23 +67,11 @@ function Carrer() {
     );
   });
 
-  const carrerListDOM2 = carrerList2.map((carrer, index) => {
-    return (
-      <CommonDOM
-        key={index}
-        title={carrer.title}
-        content={carrer.content}
-        date={carrer.date}
-      />
-    );
-  });
-
   return (
     <div>
       <h2>これまでの経歴</h2>
-      <div className={carrerStyle.divFlexStyle}>
-        <div className={styles.grid}>{carrerListDOM}</div>
-        <div className={styles.grid}>{carrerListDOM2}</div>
+      <div className={styles.grid}>
+        {carrerListDOM}
       </div>
     </div>
   );

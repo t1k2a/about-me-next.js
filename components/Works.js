@@ -30,8 +30,8 @@ const DesignSlider = () => {
   return (
     <div>
       <Slider {...settings}>
-        {designImageList.map((image) => (
-          <div>
+        {designImageList.map((image, index) => (
+          <div key={index}>
             <Image
               src={`/images/design/${image.src}.png`}
               alt={image.alt}
@@ -57,7 +57,7 @@ function Works() {
           >
             ボタン押下でLINEAPI経由で退勤の連絡が届く
           </p>
-          <Image src="/images/leaving-work-img.jpg" width={350} height={600} />
+          <Image src="/images/leaving-work-img.jpg" width={350} height={600} alt='退勤アプリ' />
         </div>
         <div>
           <h3 className={utilStyle.headingMd}>デザイン制作</h3>
@@ -65,7 +65,7 @@ function Works() {
             style={{ margin: '0 0 5% 0', fontSize: '15px', width: '90%' }}
             className={utilStyle.boldText}
           >
-            趣味でデザイン制作をおこなっている
+            趣味で画像１枚のデザインを制作
           </p>
           <DesignSlider></DesignSlider>
         </div>

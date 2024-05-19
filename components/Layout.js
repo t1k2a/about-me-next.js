@@ -1,6 +1,12 @@
 import Head from 'next/head';
 import styles from './layout.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
+
+const iconImageList = [
+  { href: 'x.com/t1k2a' ,src: 'icon_x', alt: 'x' },
+  { href: 'www.instagram.com/t1k2a_engineer_output/', src: 'icon_ig', alt: "instragram" },
+];
 
 export const siteTitle = "George's Portfolio Site";
 
@@ -14,21 +20,15 @@ function Layout({ children, home }) {
         {home ? (
           <>
             <ul className={styles.snsIcons}>
-              <li>
-                <a href="https://x.com/t1k2a" target="_blank">
-                  <img src="images/icon_x.png" width="30" height="30" />
+              {iconImageList.map((image, index) => (
+                <li key={index}>
+                <a href={`https://${image.href}`} target="_blank">
+                  <Image src={`/images/${image.src}.png`} alt={image.alt} width={30} height={30} />
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/t1k2a_engineer_output//"
-                  target="_blank"
-                >
-                  <img src="images/icon_ig.png" width="30" height="30" />
-                </a>
-              </li>
+                </li>
+              ))}
             </ul>
-            <img src="/images/mv.png" />
+            <Image src="/images/mv.png" alt='main visiual' width={1910} height={600} />
           </>
         ) : (
           <></>
