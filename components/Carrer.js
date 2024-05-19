@@ -59,9 +59,10 @@ const CommonDOM = ({ title, content, date }) => (
 );
 
 function Carrer() {
-  const carrerListDOM = carrerList.map((carrer) => {
+  const carrerListDOM = carrerList.map((carrer, index) => {
     return (
       <CommonDOM
+        key={index}
         title={carrer.title}
         content={carrer.content}
         date={carrer.date}
@@ -69,9 +70,10 @@ function Carrer() {
     );
   });
 
-  const carrerListDOM2 = carrerList2.map((carrer) => {
+  const carrerListDOM2 = carrerList2.map((carrer, index) => {
     return (
       <CommonDOM
+        key={index}
         title={carrer.title}
         content={carrer.content}
         date={carrer.date}
