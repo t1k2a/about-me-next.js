@@ -1,17 +1,23 @@
-import styles from '../styles/Home.module.css'
-import utilStyle from '../styles/utils.module.css'
-import Date from '../lib/date'
-import Link from "next/link";
+import styles from '../styles/Home.module.css';
+import utilStyle from '../styles/utils.module.css';
+import Date from '../lib/date';
+import Link from 'next/link';
 
 function Posts({ allPostsData }) {
-    return (
-        <section>
-        <h2>投稿記事（Qiitaに飛びます）</h2>
-        <div className={styles.grid}>
-          {allPostsData.filter(post => post.likes_count >= 1).sort((a, b) => b.likes_count - a.likes_count).map(({id, created_at, title, url, likes_count}) => (
+  return (
+    <section>
+      <h2>投稿記事（Qiitaに飛びます）</h2>
+      <div className={styles.grid}>
+        {allPostsData
+          .sort((a, b) => b.likes_count - a.likes_count)
+          .map(({ id, created_at, title, url, likes_count }) => (
             <article key={id}>
-              <Link href={`${url}`} className={utilStyle.boldText} target='_blank'>
-                  {title}
+              <Link
+                href={`${url}`}
+                className={utilStyle.boldText}
+                target="_blank"
+              >
+                {title}
                 <br />
                 <small className={utilStyle.lightText}>
                   <Date dateString={created_at} />
@@ -23,16 +29,16 @@ function Posts({ allPostsData }) {
               </Link>
             </article>
           ))}
-        </div>
-
-        <section>
-          <h2>X（旧Twitter）</h2>
-          <div className={styles.grid}>
-            <a class="twitter-timeline" href="https://twitter.com/t1k2a?ref_src=twsrc%5Etfw">Tweets by t1k2a</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </section>
-      </section>
-    )
+        <Link
+          style={{ textDecoration: 'underline' }}
+          href={`https://qiita.com/t1k2a`}
+          target="_blank"
+        >
+          投稿記事をもっと見る
+        </Link>
+      </div>
+    </section>
+  );
 }
 
 export default Posts;

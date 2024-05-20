@@ -1,0 +1,20 @@
+.divFlexStyle {
+    display: grid;
+    flex-wrap: wrap;
+    grid-gap: 40px;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    max-width: 1200px;
+}
+
+.listCommonStyle {
+    margin-bottom: 10px;
+    width: 100%;
+    display: block;
+}
+
+
+.ulCommonStyle {
+    list-style: none;
+    padding: 0;
+}

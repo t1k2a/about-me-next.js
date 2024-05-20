@@ -1,9 +1,9 @@
 .container {
-    max-width: 1244px;
-    padding: 0 1rem;
-    margin: 0 auto 6rem;
-  }
-  
+  max-width: 1244px;
+  padding: 0 1rem;
+  margin: 0 auto 6rem;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -25,14 +25,14 @@
 }
 
 .snsIcons {
-    display: flex;
+  display: flex;
 }
 
-.snsIcons > li{
-    display: inline;
-    padding-right: 5px;
+.snsIcons > li {
+  display: inline;
+  padding-right: 5px;
 }
 
 .snsIcons > img {
-    padding-bottom: 30px;
+  padding-bottom: 30px;
 }

@@ -1,44 +1,80 @@
-import styles from "./layout.module.css"
-import utilStyle from '../styles/utils.module.css'
+import styles from '../styles/Home.module.css';
+import carrerStyle from '../styles/carrer.module.css';
+import utilStyle from '../styles/utils.module.css';
+
+const DateFormat = (startYear, startMonth, endYear, endMonth) =>
+  endYear == null && endMonth == null
+    ? `${startYear}年${startMonth}月 ~ 現在`
+    : `${startYear}年${startMonth}月 ~ ${endYear}年${endMonth}月`;
+
+const carrerList = [
+  {
+    title: '自社開発会社',
+    content:
+      '電話予約サービスのサーバーサイド開発、ユニットテスト古くなったシステムのフローと技術を刷新(Cake→Laravel)、社内改善ツールの開発',
+    date: DateFormat(2018, 4, 2019, 10),
+  },
+  {
+    title: '広告系ベンチャー企業',
+    content: '広告主の使用権限を設定する管理画面の改修',
+    date: DateFormat(2019, 11, 2020, 1),
+  },
+  {
+    title: 'SES企業',
+    content: 'ECサイト改修や決済サービスの保守運用を担当',
+    date: DateFormat(2020, 3, 2021, 6),
+  },
+  {
+    title: '広告系ベンチャー企業2',
+    content:
+      '美容系Webページ制作部隊のリードエンジニアを担当し、クライアント企業の新規ウェブサイト製作やチームビルディング',
+    date: DateFormat(2021, 8, 2023, 3),
+  },
+  {
+    title: '（現）フリーランス',
+    content:
+      '社内システムのリプレイス(Cake→Laravel)、プロジェクト施策やシステム改善を担当',
+    date: DateFormat(2023, 4),
+  },
+];
+
+const CommonDOM = ({ title, content, date }) => (
+  <div className={carrerStyle.listCommonStyle}>
+    <h3 style={{ margin: '0', fontWeight: 'bold' }}>{title}</h3>
+    <small className={utilStyle.lightText}>{date}</small>
+    <hr
+      style={{
+        border: 'none',
+        height: '1px',
+        width: '90%',
+        backgroundColor: 'black',
+        margin: '5px 0',
+      }}
+    />
+    <p style={{ margin: '0', fontSize: '15px', width: '90%' }}>{content}</p>
+  </div>
+);
 
 function Carrer() {
+  const carrerListDOM = carrerList.map((carrer, index) => {
     return (
-        <div className={styles.container}>
-            <section className={utilStyle.headingMd}>
-                <p>こんにちは！Georgeです！</p>
-                <p>現在は主にPHPやJavaScriptを使用したシステムエンジニアとして働いています！</p>
-                <p>より多くの知見と経験を得るために個人開発を進めています！！</p>
-                <p>何卒よろしくお願いします！！！</p> 
-            </section>
-            <section>
-                <h2>これまでの経歴</h2>
-                <ul>
-                    <li>
-                    2018年卒として大規模な自社開発会社に入社
-                    </li>
-                    <li>
-                    開発者としてゴリゴリコードを書きたいと考え、ベンチャー企業に転職
-                    </li>
-                    <li>
-                    精神疾患に陥り、そのまま退職、知人の企業にSESとして入社
-                    </li>
-                    <li>
-                    自分のプロダクトを持ちたいと考え、現職に転職
-                    </li>
-                    <li>
-                    現職でリード経験を経て改めて実装者として開発経験を増やしたいと考え、フリーランスへの転向を決意
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2>体調面</h2>
-                <p>
-                １度精神疾患を患ってからは体調を崩すことなく、働けております
-                </p>      
-        </section>
-        </div>
-        
+      <CommonDOM
+        key={index}
+        title={carrer.title}
+        content={carrer.content}
+        date={carrer.date}
+      />
     );
+  });
+
+  return (
+    <div>
+      <h2>これまでの経歴</h2>
+      <div className={styles.grid}>
+        {carrerListDOM}
+      </div>
+    </div>
+  );
 }
 
 export default Carrer;
