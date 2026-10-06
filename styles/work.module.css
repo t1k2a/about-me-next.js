@@ -1,3 +1,84 @@
 .divFlexStyle {
   max-width: 500px;
 }
+
+.worksGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+}
+
+.projectLink {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d7d7d7;
+}
+
+.projectLinkLabel {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.projectLink:focus-visible {
+  outline: 2px solid #0070f3;
+  outline-offset: 4px;
+}
+
+.additionalProject {
+  min-width: 0;
+}
+
+.projectSubtitle {
+  margin: 0 0 1rem;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.projectDescription {
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.8rem;
+}
+
+.projectLinks a:focus-visible {
+  outline: 2px solid #0070f3;
+  outline-offset: 4px;
+}
+
+.projectFigure {
+  margin: 0 0 1.5rem;
+}
+
+.figureLink {
+  display: block;
+}
+
+.figureLink:focus-visible {
+  outline: 2px solid #0070f3;
+  outline-offset: 4px;
+}
+
+.enlargeLabel,
+.projectFigure figcaption {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  line-height: 1.7;
+}
+
+.projectFigure figcaption {
+  color: #555;
+}
