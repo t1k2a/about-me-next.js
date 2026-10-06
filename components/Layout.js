@@ -28,7 +28,27 @@ function Layout({ children, home }) {
                 </li>
               ))}
             </ul>
-            <Image src="/images/mv.png" alt='main visiual' width={1910} height={600} />
+            <section className={styles.hero} aria-labelledby="hero-title">
+              <div className={styles.heroIdentity}>
+                <p className={styles.heroLabel}>WEB ENGINEER / PORTFOLIO</p>
+                <h1 id="hero-title" className={styles.heroName}>GEORGE</h1>
+                <p className={styles.heroRole}>システムを改善し、Webを育てる。</p>
+              </div>
+              <div className={styles.heroExperience}>
+                <p className={styles.heroHeadline}>
+                  システム改修から、<br />Web制作・保守まで。
+                </p>
+                <p className={styles.heroDescription}>
+                  PHP / Laravelを中心としたシステム改修と、Webサイトの制作・保守運用。
+                  リードエンジニアとしてのチームづくりの経験を活かし、開発と改善に取り組んでいます。
+                </p>
+                <ul className={styles.heroSkills} aria-label="主な経験">
+                  <li>PHP / Laravel</li>
+                  <li>Web制作・保守運用</li>
+                  <li>チームづくり</li>
+                </ul>
+              </div>
+            </section>
           </>
         ) : (
           <></>
