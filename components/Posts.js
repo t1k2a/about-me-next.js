@@ -3,12 +3,13 @@ import utilStyle from '../styles/utils.module.css';
 import Date from '../lib/date';
 import Link from 'next/link';
 
-function Posts({ allPostsData }) {
+function Posts({ allPostsData, unavailable = false }) {
   return (
     <section>
       <h2>投稿記事（Qiitaに飛びます）</h2>
+      {unavailable && <p>記事を取得できませんでした。Qiitaのプロフィールからご覧ください。</p>}
       <div className={styles.grid}>
-        {allPostsData
+        {[...allPostsData]
           .sort((a, b) => b.likes_count - a.likes_count)
           .map(({ id, created_at, title, url, likes_count }) => (
             <article key={id}>
@@ -16,6 +17,7 @@ function Posts({ allPostsData }) {
                 href={`${url}`}
                 className={utilStyle.boldText}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {title}
                 <br />
@@ -33,6 +35,7 @@ function Posts({ allPostsData }) {
           style={{ textDecoration: 'underline' }}
           href={`https://qiita.com/t1k2a`}
           target="_blank"
+                rel="noopener noreferrer"
         >
           投稿記事をもっと見る
         </Link>
