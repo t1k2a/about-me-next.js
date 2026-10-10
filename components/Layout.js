@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const iconImageList = [
   { href: 'x.com/t1k2a' ,src: 'icon_x', alt: 'x' },
-  { href: 'www.instagram.com/t1k2a_engineer_output/', src: 'icon_ig', alt: "instragram" },
+  { href: 'www.instagram.com/t1k2a_engineer_output/', src: 'icon_ig', alt: "Instagram" },
 ];
 
 export const siteTitle = "George's Portfolio Site";
@@ -22,7 +22,7 @@ function Layout({ children, home }) {
             <ul className={styles.snsIcons}>
               {iconImageList.map((image, index) => (
                 <li key={index}>
-                <a href={`https://${image.href}`} target="_blank">
+                <a href={`https://${image.href}`} target="_blank" rel="noopener noreferrer">
                   <Image src={`/images/${image.src}.png`} alt={image.alt} width={30} height={30} />
                 </a>
                 </li>
